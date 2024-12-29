@@ -90,7 +90,7 @@
   margin: 0;
   display: block;
   font-size: 20px;
-  padding: 10px;
+  padding: 12px;
   cursor: pointer;
 }
 .sidenav span {
@@ -165,9 +165,6 @@
   background-color: #fff;
   color: #000;
 }
-.hide {
-      display: none !important; /* 隱藏樣式 */
-    }
 
 .top {
   background-image: #fff;
@@ -621,7 +618,7 @@ footer {
     <span>預約導師</span>
   </div>
 
-  <div class="ads-shell" id="adsShell">
+  <div class="ads-shell">
     <div class="ads">
       <i class="fa-solid fa-circle-xmark" id="close"></i>
       <span>打開遊戲，實質是在……偷偷溫書？</span>
@@ -774,55 +771,67 @@ footer {
     }
   </script>
   <script>
-    // 設置 Cookie 的函數
-    function setCookie(name, value, days) {
-      const date = new Date();
-      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // 設置有效期
-      const expires = "expires=" + date.toUTCString();
-      document.cookie = name + "=" + value + ";" + expires + ";path=/";
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+  // Check if the cookie exists
+  const cookieName = 'adsShownToday';
+  const shownToday = getCookie(cookieName);
 
-    // 獲取 Cookie 的函數
-    function getCookie(name) {
-      const cookies = document.cookie.split(";"); // 將 cookie 字串拆分為陣列
-      for (let i = 0; i < cookies.length; i++) {
-        const c = cookies[i].trim();
-        if (c.indexOf(name + "=") === 0) {
-          return c.substring(name.length + 1); // 返回指定 Cookie 的值
-        }
-      }
-      return null; // 如果未找到，返回 null
-    }
+  // If the cookie doesn't exist or is expired, show the ads and set the cookie
+  if (!shownToday || isCookieExpired(cookieName)) {
+    showAds();
+    setCookie(cookieName, 'true', 1); // Expires after 1 day
+  } else {
+    hideAds();
+  }
 
-    // 判斷今天是否已經顯示過廣告
-    function shouldShowAdToday() {
-      const lastVisitDate = getCookie("lastVisitDate"); // 獲取上次訪問的日期
-      const today = new Date().toISOString().split("T")[0]; // 獲取今天的日期（格式：YYYY-MM-DD）
+  // Add event listener to close button
+  const closeButton = document.getElementById('close');
+  if (closeButton) {
+    closeButton.addEventListener('click', hideAds);
+  }
+});
 
-      if (lastVisitDate === today) {
-        return false; // 如果今天已經顯示過廣告，則不再顯示
-      }
 
-      // 設置今天為上次訪問的日期
-      setCookie("lastVisitDate", today, 1); // 有效期為 1 天
-      return true; // 如果今天沒顯示過廣告，則顯示
-    }
+function showAds() {
+  const adsShell = document.querySelector('.ads-shell');
+  const ads = document.querySelector('.ads');
+  if (adsShell) adsShell.style.display = 'flex';
+  if (ads) ads.style.display = 'block';
+}
 
-    // 等待 DOM 加載完成後執行
-    document.addEventListener("DOMContentLoaded", function () {
-      const adsShell = document.getElementById("adsShell");
-      const closeButton = document.getElementById("close");
+function hideAds() {
+  const adsShell = document.querySelector('.ads-shell');
+  const ads = document.querySelector('.ads');
+  if (adsShell) adsShell.style.display = 'none';
+  if (ads) ads.style.display = 'none';
+}
 
-      // 檢查是否需要顯示廣告
-      if (shouldShowAdToday()) {
-        adsShell.classList.remove("hide"); // 顯示廣告
-      }
 
-      // 綁定關閉按鈕的點擊事件
-      closeButton.addEventListener("click", function () {
-        adsShell.classList.add("hide"); // 隱藏廣告
-      });
-    });
+function setCookie(name, value, days) {
+  const date = new Date();
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  const expires = "; expires=" + date.toUTCString();
+  document.cookie = name + "=" + value + expires + "; path=/";
+}
+
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+function isCookieExpired(name) {
+  const cookie = getCookie(name);
+  if (!cookie) return true; // Cookie doesn't exist, consider it expired
+
+  //  A more robust approach would involve parsing the cookie's expiration date, but this simplified version suffices for a daily expiry.
+  return false;
+}
   </script>
 </body>
 
