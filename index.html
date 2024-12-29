@@ -1,1 +1,682 @@
-Hi!
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <meta name="keywords" content="">
+  <script src="https://kit.fontawesome.com/92e8f6cdc3.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+  <title>0oXx自修室</title>
+
+  <style>
+    body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: "Noto Sans TC", sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #fff;
+}
+
+.menu {
+  position: fixed;
+  z-index: 888;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  display: block;
+  background-color: #fff;
+  border-bottom: 1px #ddd solid;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.menu i {
+  display: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 8px;
+}
+.menu font {
+  float: left;
+  font-size: 16px;
+}
+.menu-right {
+  position: absolute;
+  right: 10px;
+}
+.menu-right span {
+  color: #666;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.menu-right span:hover {
+  color: #000;
+  font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .menu i {
+    display: inline-block;
+  }
+  .menu-right {
+    display: none;
+  }
+}
+
+.sidenav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: -280px;
+  width: 250px;
+  height: 100vh;
+  background-color: rgba(239, 239, 239, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s;
+}
+.closebtn {
+  psition: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  display: block;
+  font-size: 18px;
+  padding: 12px;
+  cursor: pointer;
+}
+.sidenav span {
+  color: #444;
+  display: block;
+  padding: 5px 0 5px;
+  margin: -5px 20px 15px;
+  cursor: pointer;
+}
+.sidenav span:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+.top {
+  background-image: #fff;
+  min-height: 100vh;
+  position: relative;
+  overflow:hidden;
+}
+.top-img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: -150px;
+  height: 80%;
+  z-index: -10;
+}
+.top-text {
+  color: #fff;
+  padding: 20px;
+}
+.top-text span {
+  color: #000;
+  font-size: 12px;
+  display: block;
+  margin-top: 60px;
+}
+.top-text font {
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+  display: block;
+  padding: 3px 0 5px;
+}
+.top-text p {
+  color: #000;
+  margin: 0;
+  padding: 0 0 5px;
+  font-size: 14px;
+  display: block;
+}
+.t-text button,
+.top-text button {
+  cursor: pointer;
+  margin: 10px 3px 0;
+  margin-left: 0;
+  border: none;
+  padding: 5px 20px 5px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 20px;
+}
+.t-text button:hover,
+.top-text button:hover {
+  transform: scale(1.03);
+  transition: all 0.2s;
+}
+#learnmore {
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#view {
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.course {
+  padding: 40px 20px 50px;
+  background-color:#eee;
+}
+.couse-shell {
+  text-align: center;
+  overflow: auto;
+  white-space: nowrap;
+}
+.course .tit-text {
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+}
+.course-block {
+  position: relative;
+  width: 150px;
+  height: 200px;
+  background-color: #fff;
+  border: 1px #ddd solid;
+  border-radius: 15px;
+  display: inline-block;
+  text-align: left;
+  margin: 10px;
+  padding: 15px;
+  cursor: pointer;
+  vertical-align: top;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.course-block:after {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255,255,255,0.85);
+  mask-image: linear-gradient(180deg, transparent 0%, #000 80%);
+}
+#math {
+  background-image: url("https://images.unsplash.com/photo-1613905780946-26b73b6f6e11?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzQ2MDY5MTV8&ixlib=rb-4.0.3&q=85");
+}
+#m2 {
+  background-image: url("https://images.unsplash.com/photo-1648201637025-1c77b9be3013?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzQ2MDcxNzh8&ixlib=rb-4.0.3&q=85");
+}
+#jm {
+  background-image: url("https://images.unsplash.com/photo-1572614035366-7bdd0af2c733?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzUxMTU3NzB8&ixlib=rb-4.0.3&q=85");
+}
+#pm2 {
+  background-image: url("https://images.unsplash.com/photo-1664734805186-6dae8979a1c3?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzUxMTU5ODd8&ixlib=rb-4.0.3&q=85");
+}
+#gray {
+  background-color: rgba(0, 0, 0, 0.08);
+  filter: grayscale(1) invert(0.2);
+}
+.course-block span {
+  width: 110px;
+  white-space: wrap;
+  font-size: 18px;
+  display: inline-block;
+  margin: 0;
+  font-weight: bold;
+}
+.course-block p {
+  display: block;
+  margin: 0;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 11.5px;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: #333;
+  padding: 2px 5px 2px;
+  border-radius: 15px;
+}
+.course-block font {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  font-size: 12px;
+  margin: 3px 0 0;
+  display: block;
+  color: #000;
+  white-space: wrap;
+  z-index: 10;
+}
+.course-block:hover {
+  transform: scale(1.02);
+  transition: all 0.2s;
+}
+
+.why {
+  background-color: #fff;
+}
+.why-text {
+  padding: 20px;
+}
+.why-text span {
+  color: #000;
+  font-size: 12px;
+  padding: 0 0 10px;
+  display: block;
+}
+.why-block {
+  background-color: #fff;
+  padding: 10px;
+  margin: 0 0 10px;
+  border-radius: 5px;
+  min-height: 60px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.why-block i {
+  font-size: 30px;
+  text-align: center;
+  width: 60px;
+  margin-left: -5px;
+}
+.why-block div {
+  width: calc(100% - 60px);
+}
+.why-block div span {
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 0 3px;
+}
+.why-block div p {
+  color: #777;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+.why-img-1,
+.why-img-2 {
+  height: 200px;
+  background-image: url("https://images.unsplash.com/photo-1626885228113-0ac4b52e6cea?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzEwMzgxNTh8&ixlib=rb-4.0.3&q=85");
+  background-size: cover;
+  background-position: top center;
+}
+.why-img-1 {
+  display: none;
+}
+
+.tutor {
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+  text-align: center;
+}
+.tutor-img {
+  position: absolute;
+  z-index: -10;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: -60px;
+}
+.tutor font {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  padding: 0 0 5px;
+}
+.tutor-shell {
+  text-align: center;
+  qborder: 1px red solid;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  padding: 20px 40px 20px;
+  border-radius: 15px;
+}
+.tutor-sub-shell {
+  qborder: 1px red solid;
+}
+
+.t-info {
+  qborder: 1px red solid;
+  vertical-align: top;
+  text-align: center;
+  display: inline-block;
+}
+.t-img {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 5px;
+  border-radius: 50%;
+  border: 2px #fff solid;
+  background-image: url("https://the-cleaner-0oxx.github.io/media/image/cat-cat-cat.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.t-info font {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+}
+.t-info p {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  display: block;
+}
+
+.t-text {
+  qborder: 1px red solid;
+  vertical-align: top;
+  display: block;
+  padding: 20px 0 0;
+}
+.t-text span {
+  display: block;
+  padding: 0 0 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .top,
+  .why {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
+  .course {
+    padding: 10vh 50px 10vh;
+    margin:0 0 50px;
+  }
+  .top-text {
+    margin-bottom: 35vh;
+  }
+  .why-text {
+    width: calc(60% - 100px);
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px 50px 20px;
+  }
+  .why-img-1 {
+    width: 45%;
+    height: 60vh;
+    margin: 20px;
+    margin-left: 50px;
+    margin-right: -20px;
+    border-radius: 20px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .why-img-1 {
+    height: 70vh;
+  }
+  .why-img-2 {
+    display: none;
+  }
+  .history {
+    padding: 20px 150px 20px;
+  }
+  .tutor {
+    margin-top: 30px;
+    min-height: 200px;
+    padding: 20vh 50px 20vh;
+  }
+  .tutor-sub-shell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+  .t-text {
+    display: inline-block;
+    margin-left: 40px;
+    margin-right: -10px;
+    text-align: left;
+  }
+}
+
+footer {
+  background-color: #eee;
+  color: #000;
+  padding: 20px 50px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+.footer-column {
+  flex: 1 1 200px; /* Adjust columns to fit smaller screens */
+  min-width: 150px; /* Minimum width for each column */
+}
+.footer-column h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #888;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-column ul li {
+  margin-bottom: 4px;
+}
+.footer-column ul li a {
+  text-decoration: none;
+  color: #111;
+  font-size: 12px;
+  transition: color 0.3s;
+}
+.footer-column ul li a:hover {
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    display:inline;
+  }
+  .footer-column ul{
+    margin:0 0 50px;
+  }
+  .footer-column {
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="menu">
+    <i class="fa-solid fa-bars" onclick="openNav()"></i>
+    <font>0oXx自修室</font>
+    <div class="menu-right">
+      <span>首頁</span>
+      <span>DSE MATH</span>
+      <span>DSE M2</span>
+      <span>預約導師</span>
+    </div>
+  </div>
+
+  <div id="mySidenav" class="sidenav">
+    <font href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></font>
+    <span>首頁</span>
+    <span>DSE MATH</span>
+    <span>DSE M2</span>
+    <span>預約導師</span>
+  </div>
+
+  <div class="top">
+    <div class="top-text">
+      <div class="top-img">
+        <iframe src="https://www.desmos.com/calculator/grx0vgd7f7?embed" width="100%" height="100%" style="border:none" frameborder=0></iframe>
+      </div>
+
+      <span>歡迎來到0oXx自修室</span>
+      <font>一個免費的自學平台，旨在幫助學生...</font>
+      <p>0oXx自修室旨在幫助學生能夠有針對性地進行訓練和鞏固。同時，題目也提供詳細的解答和講解，讓學生了解每道題的解題思路。</p>
+      <button id="learnmore" onclick="location.href=''">了解更多</button>
+      <button id="view" style="display:none;">前往課程</button>
+      <button id="view" onclick="location.href=''">了解私補方案</button>
+    </div>
+  </div>
+
+  <div class="course">
+    <span class="tit-text">課程</span>
+    <div class="couse-shell">
+      <div class="course-block" id="math" onclick="location.href=''">
+        <span>DSE MATH</span>
+        <p>免費</p>
+        <font>DSE is so HARD.</font>
+      </div>
+
+      <div class="course-block" id="m2" onclick="location.href=''">
+        <span>DSE M2</span>
+        <p>免費</p>
+        <font>M2? M2 is so hard for me.</font>
+      </div>
+
+      <div class="course-block" id="jm" onclick="location.href=''">
+        <span style="color:#fff;">初中數學基礎鞏固班</span>
+        <p>~$400</p>
+        <font>學習初中數學，並針對弱點做題。</font>
+      </div>
+
+      <div class="course-block" id="pm2" onclick="location.href=''">
+        <span style="color:#fff;">M2預備班</span>
+        <p>~$450</p>
+        <font>深化學習會在高中課程出現的初中知識。</font>
+      </div>
+    </div>
+  </div>
+
+  <div class="why">
+    <div class="why-img-2"></div>
+    <div class="why-img-1"></div>
+    <div class="why-text">
+      <span>為何選擇0oXx自修室</span>
+      <div class="why-block">
+        <i class="fa-solid fa-dollar-sign"></i>
+        <div>
+          <span>免費！</span>
+          <p>我希望能有更多的學生可以受益，所以這個網站的大部分材料都是免費的。</p>
+        </div>
+      </div>
+      <div class="why-block">
+        <i class="fa-solid fa-user-pen"></i>
+        <div>
+          <span>真正的學習</span>
+          <p>0oXx自修室對題目提供了逐步的解釋，同學可以學習得更透徹。</p>
+        </div>
+      </div>
+      <div class="why-block">
+        <i class="fa-regular fa-clock"></i>
+        <div>
+          <span>彈性排程</span>
+          <p>同學可以隨時隨地地使用0oXx自修室學習，十分便利。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tutor">
+    <div class="tutor-img">
+      <iframe src="https://www.desmos.com/calculator/dwhn77svvs?embed" width="100%" height="100%" style="border:none" frameborder=0></iframe>
+    </div>
+    <div class="tutor-shell">
+    <div class="tutor-sub-shell">
+      <div class="t-info">
+        <div class="t-img"></div>
+        <font>導師編號 154541</font>
+        <p>香港科技大學 | 理學</p>
+      </div>
+      <div class="t-text">
+        <span>補習科目：數學及M2</span>
+        <span>學費收費：$400-$600/小時</span>
+        <span>主要語言：中文（廣東話）</span>
+        <button id="learnmore" onclick="location.href=''">了解更多</button>
+        <button id="view" onclick="location.href='https://www.hkta.edu.hk/tutor/detail/154541'">預約導師</button>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div style="height:50px;"></div>
+  
+    <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>網站連結</h3>
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">DSE MATH</a></li>
+          <li><a href="#">DSE M2</a></li>
+          <li><a href="#">初中數學基礎鞏固班</a></li>
+          <li><a href="#">M2預備班</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>私補資訊</h3>
+        <ul>
+          <li><a href="#">課程資訊</a></li>
+          <li><a href="#">導師資訊</a></li>
+          <li><a href="#">定價</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>外部連結</h3>
+        <ul>
+          <li><a href="https://www.hkta.edu.hk/parent/booktutor?tutorId=154541">預約導師</a></li>
+          <li><a href="https://www.hkta.edu.hk/tutor/detail/154541">導師主頁</a></li>
+        </ul>
+      </div>
+  </footer>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.left = "0";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.left = "-280px";
+    }
+  </script>
+</body>
+
+</html>
