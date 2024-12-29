@@ -775,14 +775,21 @@ footer {
   </script>
   <script>
     // 等待 DOM 加載完成後執行
-    document.addEventListener("DOMContentLoaded", function() {
-      // 找到廣告容器和關閉按鈕
+    document.addEventListener("DOMContentLoaded", function () {
       const adsShell = document.getElementById("adsShell");
       const closeButton = document.getElementById("close");
+      // 取得當前日期字串 (格式: YYYY-MM-DD)
+      const today = new Date().toISOString().split('T')[0];
+      // 檢查 localStorage 中是否有儲存廣告顯示的日期
+      const lastShownDate = localStorage.getItem("adsLastShownDate");
+      // 如果沒有儲存或日期不是今天，顯示廣告
+      if (lastShownDate !== today) {
+        adsShell.classList.remove("hide"); // 顯示廣告
+        localStorage.setItem("adsLastShownDate", today); // 更新顯示日期
+      }
       // 綁定關閉按鈕的點擊事件
-      closeButton.addEventListener("click", function() {
-        // 將廣告容器和內部廣告設置為隱藏
-        adsShell.classList.add("hide");
+      closeButton.addEventListener("click", function () {
+        adsShell.classList.add("hide"); // 隱藏廣告
       });
     });
   </script>
