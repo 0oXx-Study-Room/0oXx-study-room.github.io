@@ -40,7 +40,7 @@
 .menu i {
   display: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 20px;
   margin-right: 8px;
 }
 .menu font {
@@ -89,8 +89,8 @@
   left: 0;
   margin: 0;
   display: block;
-  font-size: 18px;
-  padding: 12px;
+  font-size: 20px;
+  padding: 10px;
   cursor: pointer;
 }
 .sidenav span {
@@ -774,19 +774,50 @@ footer {
     }
   </script>
   <script>
+    // 設置 Cookie 的函數
+    function setCookie(name, value, days) {
+      const date = new Date();
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000)); // 設置有效期
+      const expires = "expires=" + date.toUTCString();
+      document.cookie = name + "=" + value + ";" + expires + ";path=/";
+    }
+
+    // 獲取 Cookie 的函數
+    function getCookie(name) {
+      const cookies = document.cookie.split(";"); // 將 cookie 字串拆分為陣列
+      for (let i = 0; i < cookies.length; i++) {
+        const c = cookies[i].trim();
+        if (c.indexOf(name + "=") === 0) {
+          return c.substring(name.length + 1); // 返回指定 Cookie 的值
+        }
+      }
+      return null; // 如果未找到，返回 null
+    }
+
+    // 判斷今天是否已經顯示過廣告
+    function shouldShowAdToday() {
+      const lastVisitDate = getCookie("lastVisitDate"); // 獲取上次訪問的日期
+      const today = new Date().toISOString().split("T")[0]; // 獲取今天的日期（格式：YYYY-MM-DD）
+
+      if (lastVisitDate === today) {
+        return false; // 如果今天已經顯示過廣告，則不再顯示
+      }
+
+      // 設置今天為上次訪問的日期
+      setCookie("lastVisitDate", today, 1); // 有效期為 1 天
+      return true; // 如果今天沒顯示過廣告，則顯示
+    }
+
     // 等待 DOM 加載完成後執行
     document.addEventListener("DOMContentLoaded", function () {
       const adsShell = document.getElementById("adsShell");
       const closeButton = document.getElementById("close");
-      // 取得當前日期字串 (格式: YYYY-MM-DD)
-      const today = new Date().toISOString().split('T')[0];
-      // 檢查 localStorage 中是否有儲存廣告顯示的日期
-      const lastShownDate = localStorage.getItem("adsLastShownDate");
-      // 如果沒有儲存或日期不是今天，顯示廣告
-      if (lastShownDate !== today) {
+
+      // 檢查是否需要顯示廣告
+      if (shouldShowAdToday()) {
         adsShell.classList.remove("hide"); // 顯示廣告
-        localStorage.setItem("adsLastShownDate", today); // 更新顯示日期
       }
+
       // 綁定關閉按鈕的點擊事件
       closeButton.addEventListener("click", function () {
         adsShell.classList.add("hide"); // 隱藏廣告
