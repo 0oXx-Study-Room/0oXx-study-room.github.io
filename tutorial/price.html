@@ -1,0 +1,608 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <meta name="keywords" content="">
+  <script src="https://kit.fontawesome.com/92e8f6cdc3.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+  <title>0oXx自修室 定價</title>
+
+  <style>
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: "Noto Sans TC", sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #fff;
+}
+
+.menu {
+  position: fixed;
+  z-index: 888;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  display: block;
+  background-color: #fff;
+  border-bottom: 1px #ddd solid;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.menu i {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 8px;
+}
+.menu font {
+  float: left;
+  font-size: 16px;
+}
+.menu-right {
+  position: absolute;
+  right: 10px;
+}
+.menu-right span {
+  color: #666;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.menu-right span:hover {
+  color: #000;
+  font-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .menu i {
+    display: inline-block;
+  }
+  .menu-right {
+    display: none;
+  }
+}
+
+.sidenav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: -280px;
+  width: 250px;
+  height: 100vh;
+  background-color: rgba(239, 239, 239, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s;
+}
+.closebtn {
+  psition: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  display: block;
+  font-size: 20px;
+  padding: 12px;
+  cursor: pointer;
+}
+.sidenav span {
+  color: #444;
+  display: block;
+  padding: 5px 0 5px;
+  margin: -5px 20px 15px;
+  cursor: pointer;
+}
+.sidenav span:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+.fee-s {
+  display: block;
+  margin: 60px 20px 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+.fee-f {
+  display: block;
+  margin: 0 20px 0;
+  font-size: 16px;
+}
+.fee-shell {
+  padding: 40px 10px 0;
+  text-align: center;
+  margin: 0 0 -20px;
+}
+
+.up-fee {
+  position: relative;
+  height: 220px;
+}
+.top-fee {
+  position: absolute;
+  top: 0;
+}
+.bottom-fee {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.fee {
+  text-align: left;
+  display: block;
+  margin: 0px 10px 40px;
+  border: 1px #ccc solid;
+  border-radius: 15px;
+  width: calc(100% - 40px);
+  padding: 10px;
+}
+.fee span {
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0 0 3px;
+  padding: 0;
+}
+.fee p {
+  display: block;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+.fee font {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.fee font span {
+  top: -24px;
+  left: 0;
+  position: absolute;
+  font-size: 14px;
+  color: #aaa;
+}
+.fee button {
+  display: block;
+  font-weight: bold;
+  font-size: 12px;
+  margin: 10px 0 15px;
+  padding: 8px 20px 8px;
+  width: 100%;
+  background-color: #ddd;
+  color: #000;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+}
+#flex-bnt {
+  background-color: #000;
+  color: #fff;
+}
+
+.fee-info {
+  background-color: #eee;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  height: 120px;
+  margin: 0 -10px -10px;
+  padding: 4px 12px 0;
+  overflow: auto;
+}
+.fee-info span {
+  display: block;
+  font-weight: normal;
+  font-size: 10px;
+  color: #222;
+  margin: 5px 0 0;
+}
+.fee-info span i {
+  margin-right: 5px;
+}
+
+#flex {
+  position: relative;
+  border: 1px #000 solid;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.flex-top {
+  position: absolute;
+  top: -19px;
+  background-color: #000;
+  color: #fff;
+  left: -1px;
+  right: -1px;
+  text-align: center;
+  font-size: 11px;
+  padding: 2px 0 2px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.plan {
+  padding: 20px;
+}
+.row {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px #ddd solid;
+}
+.row:nth-child(2n) {
+  background-color: #f5f5f5;
+}
+#top-row div {
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px;
+}
+#bottom-row {
+  qtext-align: right;
+  border-bottom: none;
+  border-top: 1px #ddd solid;
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0;
+}
+#bottom-row div {
+  margin: -5px 0 0;
+}
+.row div {
+  width: 25%;
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  padding: 6px 5px 6px;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+.row div:nth-child(1) {
+  font-weight: bold;
+}
+
+#red {
+  color: #ccc;
+}
+#green {
+  color: #5cb338;
+}
+#half-green i {
+  color: #5cb338;
+  opacity: 0.4;
+}
+
+@media screen and (min-width: 830px) {
+  .fee {
+    display: inline-block;
+    width: 220px;
+    margin: 10px 10px 20px;
+  }
+  .up-fee {
+    position: relative;
+    height: 240px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .fee-s {
+    margin: 80px 80px 0;
+  }
+  .fee-f {
+    margin: 0 80px 0;
+  }
+
+  .plan {
+    padding: 20px 80px 20px;
+  }
+  #top-row div,
+  #bottom-row div {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .row div {
+    padding: 10px 5px 10px;
+  }
+  #bottom-row div {
+    margin: -10px 0 0;
+  }
+}
+
+footer {
+  background-color: #eee;
+  color: #000;
+  padding: 20px 50px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+.footer-column {
+  flex: 1 1 200px; /* Adjust columns to fit smaller screens */
+  min-width: 150px; /* Minimum width for each column */
+}
+.footer-column h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #888;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-column ul li {
+  margin-bottom: 4px;
+}
+.footer-column ul li a {
+  text-decoration: none;
+  color: #111;
+  font-size: 12px;
+  transition: color 0.3s;
+}
+.footer-column ul li a:hover {
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    display: inline;
+  }
+  .footer-column ul {
+    margin: 0 0 50px;
+  }
+  .footer-column {
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="menu">
+    <i class="fa-solid fa-bars" onclick="openNav()"></i>
+    <font>0oXx自修室</font>
+    <div class="menu-right">
+      <span>首頁</span>
+      <span>DSE MATH</span>
+      <span>DSE M2</span>
+      <span>初中數學基礎鞏固班</span>
+      <span>M2預備班</span>
+      <span>預約導師</span>
+    </div>
+  </div>
+  <div id="mySidenav" class="sidenav">
+    <font href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></font>
+    <span>首頁</span>
+    <span>DSE MATH</span>
+    <span>DSE M2</span>
+    <span>初中數學基礎鞏固班</span>
+    <span>M2預備班</span>
+    <span>預約導師</span>
+  </div>
+
+  <span class="fee-s">定價</span>
+  <font class="fee-f">無論初中至高中，都總有適合您的方案。</font>
+  <div class="fee-shell">
+    <div class="fee">
+      <div class="up-fee">
+        <div class="top-fee">
+          <span>初中數學基礎鞏固班</span>
+          <p>適合中一至中三同學或中四至中五基礎薄弱但有持續操卷的同學。</p>
+        </div>
+        <div class="bottom-fee">
+          <font><span class="oldfee"><s>$500/一小時起</s></span>$400<font style="font-size:14px;margin:0 3px 0;">/一小時起</font>
+          </font>
+          <button>開始吧</button>
+        </div>
+      </div>
+      <div class="fee-info">
+        <span>包含什麼</span>
+        <span><i class="fa-regular fa-circle-check"></i>學習初中數學，並針對弱點做題</span>
+        <span><i class="fa-regular fa-circle-check"></i>本人自制的筆記</span>
+        <span><i class="fa-regular fa-circle-check"></i>近八十份數學模擬試卷</span>
+      </div>
+    </div>
+    <div class="fee">
+      <div class="up-fee">
+        <div class="top-fee">
+          <span>M2預備班</span>
+          <p>適合將就讀M2的中三同學。</p>
+        </div>
+        <div class="bottom-fee">
+          <font>$450<font style="font-size:14px;margin:0 3px 0;">/一小時起</font>
+          </font>
+          <button>開始吧</button>
+        </div>
+      </div>
+      <div class="fee-info">
+        <span>包含什麼</span>
+        <span><i class="fa-regular fa-circle-check"></i>深化學習會在高中課程出現的初中知識</span>
+        <span><i class="fa-regular fa-circle-check"></i>深化學習會在M2課程出現的初中知識</span>
+        <span><i class="fa-regular fa-circle-check"></i>本人自制的筆記</span>
+        <span><i class="fa-regular fa-circle-check"></i>近八十份數學模擬試卷</span>
+        <span><i class="fa-regular fa-circle-check"></i>三十多份M2模擬試卷</span>
+      </div>
+    </div>
+    <div class="fee" id="flex">
+      <div class="flex-top">最受歡迎</div>
+      <div class="up-fee">
+        <div class="top-fee">
+          <span>靈活方案</span>
+          <p>根據學生特定的需求制定適切方案。</p>
+        </div>
+        <div class="bottom-fee">
+          <font>$300<font style="font-size:14px;margin:0 3px 0;">/一小時起</font>
+          </font>
+          <button id="flex-bnt">開始吧</button>
+        </div>
+      </div>
+      <div class="fee-info">
+        <span>包含什麼</span>
+        <span><i class="fa-regular fa-circle-check"></i>基於學生情況的教學</span>
+      </div>
+    </div>
+  </div>
+
+  <span class="fee-s">比較各個計劃<br>並找到合適的方案</span>
+  <div class="plan">
+    <div class="row" id="top-row">
+      <div></div>
+      <div>初中數學基礎鞏固班</div>
+      <div>M2預備班</div>
+      <div>靈活方案</div>
+    </div>
+
+    <div class="row">
+      <div>近八十份數學模擬試卷</div>
+      <div id="green"><i class="fa-solid fa-circle-check"></i></div>
+      <div id="green"><i class="fa-solid fa-circle-check"></i></div>
+      <div>+ $50</div>
+    </div>
+    <div class="row">
+      <div>三十多份M2模擬試卷</div>
+      <div id="red"><i class="fa-solid fa-circle-xmark"></i></i></div>
+      <div id="green"><i class="fa-solid fa-circle-check"></i></div>
+      <div>+ $50</div>
+    </div>
+
+    <div class="row">
+      <div>中一數學</div>
+      <div id="green"><i class="fa-solid fa-circle-check"></i></div>
+      <div id="half-green"><i class="fa-solid fa-circle-check"></i>（不會從頭教起）</div>
+      <div>+ $25</div>
+    </div>
+    <div class="row">
+      <div>中二數學</div>
+      <div id="green"><i class="fa-solid fa-circle-check"></i></div>
+      <div id="half-green"><i class="fa-solid fa-circle-check"></i>（不會從頭教起）</div>
+      <div>+ $25</div>
+    </div>
+    <div class="row">
+      <div>中三數學</div>
+      <div id="green"><i class="fa-solid fa-circle-check"></i></div>
+      <div id="half-green"><i class="fa-solid fa-circle-check"></i>（不會從頭教起）</div>
+      <div>+ $25</div>
+    </div>
+    <div class="row">
+      <div>中四數學</div>
+      <div id="red"><i class="fa-solid fa-circle-xmark"></i></div>
+      <div id="half-green"><i class="fa-solid fa-circle-check"></i>（部分）</div>
+      <div>+ $25</div>
+    </div>
+    <div class="row">
+      <div>中四M2</div>
+      <div id="red"><i class="fa-solid fa-circle-xmark"></i></div>
+      <div id="half-green"><i class="fa-solid fa-circle-check"></i>（部分）</div>
+      <div>+ $25</div>
+    </div>
+    <div class="row">
+      <div>中五數學</div>
+      <div id="red"><i class="fa-solid fa-circle-xmark"></i></div>
+      <div id="half-green"><i class="fa-solid fa-circle-check"></i>（部分）</div>
+      <div>+ $25</div>
+    </div>
+    <div class="row">
+      <div>中五M2</div>
+      <div id="red"><i class="fa-solid fa-circle-xmark"></i></div>
+      <div id="half-green"><i class="fa-solid fa-circle-check"></i>（部分）</div>
+      <div>+ $25</div>
+    </div>
+    <div class="row">
+      <div>中六數學</div>
+      <div id="red"><i class="fa-solid fa-circle-xmark"></i></div>
+      <div id="half-green"><i class="fa-solid fa-circle-check"></i>（部分）</div>
+      <div>+ $25</div>
+    </div>
+    <div class="row">
+      <div>中六M2</div>
+      <div id="red"><i class="fa-solid fa-circle-xmark"></i></div>
+      <div id="half-green"><i class="fa-solid fa-circle-check"></i>（部分）</div>
+      <div>+ $25</div>
+    </div>
+
+    <div class="row">
+      <div>視訊</div>
+      <div>+ $0</div>
+      <div>+ $0</div>
+      <div>+ $0</div>
+    </div>
+    <div class="row">
+      <div>上門</div>
+      <div>+ $20</div>
+      <div>+ $20</div>
+      <div>+ $20</div>
+    </div>
+
+    <div class="row" id="bottom-row">
+      <div>價格</div>
+      <div>$400 + 額外費用</div>
+      <div>$450 + 額外費用</div>
+      <div>$300 + 額外費用</div>
+    </div>
+  </div>
+
+  <div style="height:100px;"></div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>網站連結</h3>
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">DSE MATH</a></li>
+          <li><a href="#">DSE M2</a></li>
+          <li><a href="#">初中數學基礎鞏固班</a></li>
+          <li><a href="#">M2預備班</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>私補資訊</h3>
+        <ul>
+          <li><a href="#">課程資訊</a></li>
+          <li><a href="#">導師資訊</a></li>
+          <li><a href="#">定價</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>外部連結</h3>
+        <ul>
+          <li><a href="https://www.hkta.edu.hk/parent/booktutor?tutorId=154541">預約導師</a></li>
+          <li><a href="https://www.hkta.edu.hk/tutor/detail/154541">導師主頁</a></li>
+        </ul>
+      </div>
+  </footer>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.left = "0";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.left = "-250px";
+    }
+  </script>
+</body>
+
+</html>
