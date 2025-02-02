@@ -105,67 +105,6 @@
   font-weight: bold;
 }
 
-.ads-shell {
-  position: fixed;
-  z-index: 1111;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 10px;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-}
-.ads {
-  position: relative;
-  background-color: #00ff9c;
-  padding: 20px;
-  width: 200px;
-  min-height: 50px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-
-  background-size: cover;
-  background-position: right center;
-  background-image: url("https://images.unsplash.com/photo-1550859492-d5da9d8e45f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzU0NDk1NzF8&ixlib=rb-4.0.3&q=80&w=400");
-}
-.ads #close {
-  font-size: 16px;
-  padding: 10px;
-  color: #fff;
-  position: absolute;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-}
-.ads span {
-  display: block;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-}
-.ads p {
-  display: block;
-  color: #fff;
-  font-size: 12px;
-  margin: 180px 0 0;
-  padding: 0;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-.ads button {
-  display: block;
-  cursor: pointer;
-  margin: 5px auto 0;
-  border: none;
-  padding: 5px 20px 5px;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 20px;
-  background-color: #fff;
-  color: #000;
-}
-
 .top {
   background-image: #fff;
   min-height: 100vh;
@@ -621,15 +560,6 @@ footer {
     <span>預約導師</span>
   </div>
 
-  <div class="ads-shell">
-    <div class="ads">
-      <i class="fa-solid fa-circle-xmark" id="close"></i>
-      <span>打開遊戲，實質是在……偷偷溫書？</span>
-      <p>全新模式現正推出，現在開始愉快地讀書吧！</p>
-      <button onclick="location.href=''">點擊進入遊戲</button>
-    </div>
-  </div>
-
   <div class="top">
     <div class="top-text">
       <div class="top-img">
@@ -772,69 +702,6 @@ footer {
     function closeNav() {
       document.getElementById("mySidenav").style.left = "-280px";
     }
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-  // Check if the cookie exists
-  const cookieName = 'adsShownToday';
-  const shownToday = getCookie(cookieName);
-
-  // If the cookie doesn't exist or is expired, show the ads and set the cookie
-  if (!shownToday || isCookieExpired(cookieName)) {
-    showAds();
-    setCookie(cookieName, 'true', 1); // Expires after 1 day
-  } else {
-    hideAds();
-  }
-
-  // Add event listener to close button
-  const closeButton = document.getElementById('close');
-  if (closeButton) {
-    closeButton.addEventListener('click', hideAds);
-  }
-});
-
-
-function showAds() {
-  const adsShell = document.querySelector('.ads-shell');
-  const ads = document.querySelector('.ads');
-  if (adsShell) adsShell.style.display = 'flex';
-  if (ads) ads.style.display = 'block';
-}
-
-function hideAds() {
-  const adsShell = document.querySelector('.ads-shell');
-  const ads = document.querySelector('.ads');
-  if (adsShell) adsShell.style.display = 'none';
-  if (ads) ads.style.display = 'none';
-}
-
-
-function setCookie(name, value, days) {
-  const date = new Date();
-  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-  const expires = "; expires=" + date.toUTCString();
-  document.cookie = name + "=" + value + expires + "; path=/";
-}
-
-function getCookie(name) {
-  const nameEQ = name + "=";
-  const ca = document.cookie.split(';');
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-  }
-  return null;
-}
-
-function isCookieExpired(name) {
-  const cookie = getCookie(name);
-  if (!cookie) return true; // Cookie doesn't exist, consider it expired
-
-  //  A more robust approach would involve parsing the cookie's expiration date, but this simplified version suffices for a daily expiry.
-  return false;
-}
   </script>
 </body>
 
