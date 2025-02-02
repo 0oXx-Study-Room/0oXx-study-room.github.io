@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+  <link href="https://0oxx-study-room.github.io/media/img/website-logo_white-bg.png"/>
   <title>0oXx自修室</title>
 
   <style>
@@ -21,6 +22,30 @@
   position: relative;
   -webkit-tap-highlight-color: transparent;
   background-color: #fff;
+}
+
+.circle-grid {
+  width: 150px;
+  height: 120px;
+  background-image: radial-gradient(circle, #666 18%, transparent 18%);
+  background-size: 10px 10px; /* 5px circle + 10px gap */
+  background-repeat: repeat;
+}
+#cg-1 {
+  position: absolute;
+  z-index: -1;
+  bottom: -20px;
+  right: -30px;
+  width: 200px;
+  height: 80%;
+}
+#cg-2 {
+  position: absolute;
+  z-index: -1;
+  bottom: -30px;
+  left: -40px;
+  width: 30vw;
+  height: 50%;
 }
 
 .menu {
@@ -125,7 +150,7 @@
 }
 .top-text span {
   color: #000;
-  font-size: 12px;
+  font-size: 14px;
   display: block;
   margin-top: 60px;
 }
@@ -140,7 +165,7 @@
   color: #000;
   margin: 0;
   padding: 0 0 5px;
-  font-size: 14px;
+  font-size: 16px;
   display: block;
 }
 .t-text button,
@@ -150,7 +175,7 @@
   margin-left: 0;
   border: none;
   padding: 5px 20px 5px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   border-radius: 20px;
 }
@@ -231,9 +256,6 @@
 #pm2 {
   background-image: url("https://images.unsplash.com/photo-1664734805186-6dae8979a1c3?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzUxMTU5ODd8&ixlib=rb-4.0.3&q=85");
 }
-#circle {
-  background-image: url("https://images.unsplash.com/photo-1529669479150-1bdff4e974f8?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzU0NTIwNDF8&ixlib=rb-4.0.3&q=85");
-}
 #gray {
   background-color: rgba(0, 0, 0, 0.08);
   filter: grayscale(1) invert(0.2);
@@ -279,6 +301,7 @@
 
 .why {
   background-color: #fff;
+  margin: 0 0 40px;
 }
 .why-text {
   padding: 20px;
@@ -292,10 +315,7 @@
 .why-block {
   background-color: #fff;
   padding: 10px;
-  margin: 0 0 10px;
-  border-radius: 5px;
-  min-height: 60px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.05);
+  margin: 0 0 5px;
 
   display: flex;
   align-items: center;
@@ -306,29 +326,32 @@
   font-size: 30px;
   text-align: center;
   width: 60px;
-  margin-left: -5px;
+  margin-left: -40px;
 }
 .why-block div {
   width: calc(100% - 60px);
 }
 .why-block div span {
   color: #000;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   padding: 0 0 3px;
 }
 .why-block div p {
-  color: #777;
-  font-size: 12px;
+  color: #000;
+  font-size: 14px;
   margin: 0;
+  margin-right: -40px;
   padding: 0;
 }
 .why-img-1,
 .why-img-2 {
-  height: 200px;
-  background-image: url("https://images.unsplash.com/photo-1626885228113-0ac4b52e6cea?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzEwMzgxNTh8&ixlib=rb-4.0.3&q=85");
+  height: 240px;
+  background-image: url("https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Mzg0NzcyMjZ8&ixlib=rb-4.0.3&q=85");
   background-size: cover;
-  background-position: top center;
+  background-position: 70% 0%;
+  margin: 20px;
+  border-radius: 20px;
 }
 .why-img-1 {
   display: none;
@@ -347,9 +370,9 @@
   right: 0;
   top: 0;
   bottom: -60px;
-  
-  filter:hue-rotate(50deg);
-  -webkit-filter:hue-rotate(50deg);
+
+  filter: hue-rotate(50deg);
+  -webkit-filter: hue-rotate(50deg);
 }
 .tutor font {
   font-size: 20px;
@@ -370,6 +393,69 @@
 }
 .tutor-sub-shell {
   qborder: 1px red solid;
+}
+
+.text-block {
+  padding: 50px 100px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+.text-block-left {
+  display: block;
+  width: 60%;
+  margin-right: -4px;
+}
+.text-block-left span {
+  display: inline-block;
+  font-size: 26px;
+  display: inline-block;
+  margin: 0 0 10px;
+  margin-right: 30px;
+  font-weight: bold;
+}
+.text-block-left p {
+  display: inline-block;
+  font-size: 16px;
+  display: inline-block;
+  margin: 0;
+  margin-right: 30px;
+}
+#text-block-left-but-right span {
+  margin: 0 0 10px;
+  margin-left: 30px;
+}
+#text-block-left-but-right p {
+  margin: 0;
+  margin-left: 30px;
+}
+.text-block-img-1 {
+  display: block;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  display: none;
+}
+.text-block-img-2 {
+  display: block;
+  width: 50%;
+  height: 45vh;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#mock {
+  background-image: url("https://images.unsplash.com/photo-1600751550112-4209be589cbd?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Mzg0ODE2OTF8&ixlib=rb-4.0.3&q=85");
+  background-size: cover;
+  background-position: bottom right;
+}
+#ooxx-book {
+  background-image: url("https://the-cleaner-0oxx.github.io/media/image/cat-cat-cat.jpg");
+  background-size: cover;
+  background-position: center 23%;
 }
 
 .t-info {
@@ -401,7 +487,6 @@
   font-size: 14px;
   display: block;
 }
-
 .t-text {
   qborder: 1px red solid;
   vertical-align: top;
@@ -414,6 +499,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .top {
+    padding: 0 100px 0;
+  }
   .top,
   .why {
     display: flex;
@@ -423,7 +511,7 @@
   }
 
   .course {
-    padding: 10vh 50px 10vh;
+    padding: 10vh 100px 10vh;
     margin: 0 0 50px;
   }
   .couse-shell {
@@ -436,6 +524,9 @@
 
   .top-text {
     margin-bottom: 35vh;
+  }
+  .why {
+    margin: 0 50px 0;
   }
   .why-text {
     width: calc(60% - 100px);
@@ -454,13 +545,10 @@
     vertical-align: top;
   }
   .why-img-1 {
-    height: 70vh;
+    height: 50vh;
   }
   .why-img-2 {
     display: none;
-  }
-  .history {
-    padding: 20px 150px 20px;
   }
   .tutor {
     margin-top: 30px;
@@ -486,7 +574,6 @@ footer {
   color: #000;
   padding: 20px 50px 20px;
 }
-
 .footer-container {
   display: flex;
   flex-wrap: wrap;
@@ -513,7 +600,7 @@ footer {
 .footer-column ul li a {
   text-decoration: none;
   color: #111;
-  font-size: 12px;
+  font-size: 13px;
   transition: color 0.3s;
 }
 .footer-column ul li a:hover {
@@ -531,6 +618,36 @@ footer {
   }
   .footer-column {
     text-align: center;
+  }
+
+  .text-block {
+    padding: 20px 20px 80px;
+    display: block;
+  }
+  .text-block-left {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+  }
+  .text-block-img-1 {
+    margin: 0 0 10px;
+    border-radius: 20px;
+    display: block;
+  }
+  .text-block-img-2 {
+    display: none;
+  }
+  .text-block-left span {
+    margin-right: 0;
+  }
+  .text-block-left p {
+    margin-right: 0;
+  }
+  #text-block-left-but-right span {
+    margin: 0 0 10px;
+  }
+  #text-block-left-but-right p {
+    margin: 0;
   }
 }
 
@@ -567,7 +684,7 @@ footer {
       </div>
 
       <span>歡迎來到0oXx自修室</span>
-      <font>一個免費的自學平台，旨在幫助學生...</font>
+      <font>一個自學平台，旨在幫助學生...</font>
       <p>0oXx自修室旨在幫助學生能夠有針對性地進行訓練和鞏固。同時，題目也提供詳細的解答和講解，讓學生了解每道題的解題思路。</p>
       <button id="learnmore" onclick="location.href=''">了解更多</button>
       <button id="view" style="display:none;">前往課程</button>
@@ -601,7 +718,6 @@ footer {
         <p>~$450</p>
         <font>深化學習會在高中課程出現的初中知識。</font>
       </div>
-
     </div>
   </div>
 
@@ -614,7 +730,7 @@ footer {
         <i class="fa-solid fa-dollar-sign"></i>
         <div>
           <span>免費！</span>
-          <p>我希望能有更多的學生可以受益，所以這個網站的大部分材料都是免費的。</p>
+          <p>這個網站的大部分材料都是免費的。</p>
         </div>
       </div>
       <div class="why-block">
@@ -633,10 +749,30 @@ footer {
       </div>
     </div>
   </div>
+  <div class="text-block">
+    <div class="text-block-img-1" id="mock">
+    </div>
+    <div class="text-block-left">
+      <span>100+ 模擬試卷</span>
+      <p>本人於中學時期收集了三十多份M2模擬試卷及近八十份數學模擬試卷。</p>
+    </div>
+    <div class="text-block-img-2" id="mock">
+        <div class="circle-grid" id="cg-1"></div></div>
+  </div>  
+  <div class="text-block">
+    <div class="text-block-img-1" id="ooxx-book"></div>
+    <div class="text-block-img-2" id="ooxx-book">
+        <div class="circle-grid" id="cg-2"></div></div>
+    
+    <div class="text-block-left" id="text-block-left-but-right">
+      <span>0oXx教材研發</span>
+      <p>0oXx全部教材均為內部研發，符合香港考試制度，設有中英文版本，各種難度，可以配合任何學生的學習，為學生提供高質素的教學服務。</p>
+    </div>
+  </div>
 
   <div class="tutor">
     <div class="tutor-img">
-        <iframe src="https://www.desmos.com/calculator/grx0vgd7f7?embed" width="100%" height="100%" style="border:none" frameborder=0></iframe>
+      <iframe src="https://www.desmos.com/calculator/grx0vgd7f7?embed" width="100%" height="100%" style="border:none" frameborder=0></iframe>
     </div>
     <div class="tutor-shell">
       <div class="tutor-sub-shell">
