@@ -138,11 +138,16 @@
 }
 .top-img {
   position: absolute;
-  bottom: 0;
+  bottom: -5%;
   left: 0;
-  right: -150px;
-  height: 80%;
+  right: 0;
+  height: 70%;
   z-index: -10;
+
+  background-size: cover;
+  background-position: center;
+  background-image: url("https://0oxx-study-room.github.io/media/img/website-ani-GIT.gif");
+  transform: scale(1, -1);
 }
 .top-text {
   color: #fff;
@@ -304,12 +309,11 @@
   margin: 0 0 40px;
 }
 .why-text {
-  padding: 20px;
+  padding: 0 20px 20px;
 }
 .why-text span {
   color: #000;
   font-size: 12px;
-  padding: 0 0 10px;
   display: block;
 }
 .why-block {
@@ -650,6 +654,7 @@ footer {
     margin: 0;
   }
 }
+
   </style>
 </head>
 
@@ -659,7 +664,7 @@ footer {
     <font>0oXx自修室</font>
     <div class="menu-right">
       <span>首頁</span>
-      <span>DSE MATH</span>
+      <span>DSE 數學</span>
       <span>DSE M2</span>
       <span>初中數學基礎鞏固班</span>
       <span>M2預備班</span>
@@ -669,7 +674,7 @@ footer {
   <div id="mySidenav" class="sidenav">
     <font href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></font>
     <span>首頁</span>
-    <span>DSE MATH</span>
+    <span>DSE 數學</span>
     <span>DSE M2</span>
     <span>初中數學基礎鞏固班</span>
     <span>M2預備班</span>
@@ -679,7 +684,6 @@ footer {
   <div class="top">
     <div class="top-text">
       <div class="top-img">
-        <iframe src="https://www.desmos.com/calculator/grx0vgd7f7?embed" width="100%" height="100%" style="border:none" frameborder=0></iframe>
       </div>
 
       <span>歡迎來到0oXx自修室</span>
@@ -687,7 +691,7 @@ footer {
       <p>0oXx自修室旨在幫助學生能夠有針對性地進行訓練和鞏固。同時，題目也提供詳細的解答和講解，讓學生了解每道題的解題思路。</p>
       <button id="learnmore" onclick="location.href=''">了解更多</button>
       <button id="view" style="display:none;">前往課程</button>
-      <button id="view" onclick="location.href=''">了解私補方案</button>
+      <button id="view" onclick="location.href=''">尋求私補</button>
     </div>
   </div>
 
@@ -695,7 +699,7 @@ footer {
     <span class="tit-text">課程</span>
     <div class="couse-shell">
       <div class="course-block" id="math" onclick="location.href=''">
-        <span>DSE MATH</span>
+        <span>DSE 數學</span>
         <p>免費</p>
         <font>DSE is so HARD.</font>
       </div>
