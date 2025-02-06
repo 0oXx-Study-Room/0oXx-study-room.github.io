@@ -1,0 +1,381 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="">
+  <script src="https://kit.fontawesome.com/92e8f6cdc3.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+  <link href="https://0oxx-study-room.github.io/media/img/website-logo_white-bg.png" rel="shortcut icon" />
+  <title>0oXx自修室 - DSE 數學</title>
+
+  <style>
+    body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: "Noto Sans TC", sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #fff;
+}
+
+.menu {
+  background-color: #029376;
+  position: fixed;
+  z-index: 888;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  display: block;
+  border-bottom: 1px #ddd solid;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: row;
+}
+.menu i {
+  color: #fff;
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 8px;
+}
+#menu-i-l {
+  position: fixed;
+  left: 10px;
+}
+#menu-i-r {
+  position: fixed;
+  right: 10px;
+}
+.menu font {
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+}
+.menu-right {
+  position: absolute;
+  right: 10px;
+}
+.menu-right span {
+  color: #fff;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.menu-right span:hover {
+  color: #ddd;
+  qfont-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .menu {
+    justify-content: center;
+  }
+  .menu i {
+    display: inline-block;
+  }
+  .menu font {
+    margin: 0 20px 0;
+  }
+  .menu-right {
+    display: none;
+  }
+}
+
+.sidenav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: -280px;
+  width: 250px;
+  height: 100vh;
+  background-color: rgba(239, 239, 239, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s;
+}
+.closebtn {
+  psition: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  display: block;
+  font-size: 20px;
+  padding: 12px;
+  cursor: pointer;
+}
+.sidenav span {
+  color: #444;
+  display: block;
+  padding: 5px 0 5px;
+  margin: -5px 20px 15px;
+  cursor: pointer;
+}
+.sidenav span:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+.topic-shell {
+  margin: 40px 0 0;
+}
+.topic {
+  font-size: 16px;
+  border-top: 1px #ccc solid;
+}
+.topic div {
+  cursor: pointer;
+  border-bottom: 1px #ccc solid;
+  padding: 12px 20px 12px;
+  background-color: #fff;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.topic div:hover {
+  background-color: rgba(95, 189, 255, 0.15);
+}
+.topic div i {
+  color: #029376;
+  padding-right: 15px;
+}
+.tit {
+  cursor: pointer;
+  padding: 15px 15px 15px;
+  border-bottom: 1px #ccc solid;
+  background-color: #eee;
+  position: sticky;
+  top: 41px;
+}
+.tit span {
+  padding-left: 5px;
+}
+summary::marker,
+summary::-webkit-details-marker {
+  font-size: 12px;
+  color: #000;
+}
+
+@media screen and (min-width: 768px) {
+  .topic-shell {
+    padding: 20px 25vw 20px;
+  }
+  .topic {
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+    margin: 0 0 40px;
+  }
+}
+
+footer {
+  background-color: #eee;
+  color: #000;
+  padding: 20px 50px 20px;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+.footer-column {
+  flex: 1 1 200px; /* Adjust columns to fit smaller screens */
+  min-width: 150px; /* Minimum width for each column */
+}
+.footer-column h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #888;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-column ul li {
+  margin-bottom: 4px;
+}
+.footer-column ul li a {
+  text-decoration: none;
+  color: #111;
+  font-size: 13px;
+  transition: color 0.3s;
+}
+.footer-column ul li a:hover {
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    display: inline;
+  }
+  .footer-column ul {
+    margin: 0 0 50px;
+  }
+  .footer-column {
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="menu">
+    <i id="menu-i-l" class="fa-solid fa-bars" onclick="openNav()"></i>
+    <i id="menu-i-r" class="fa-solid fa-arrow-left"></i>
+    <font>DSE 數學</font>
+    <div class="menu-right">
+      <span>首頁</span>
+      <span>DSE 數學</span>
+      <span>DSE M2</span>
+      <span>初中數學基礎鞏固班</span>
+      <span>M2預備班</span>
+      <span>預約導師</span>
+    </div>
+  </div>
+  <div id="mySidenav" class="sidenav">
+    <font href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></font>
+    <span>首頁</span>
+    <span>DSE 數學</span>
+    <span>DSE M2</span>
+    <span>初中數學基礎鞏固班</span>
+    <span>M2預備班</span>
+    <span>預約導師</span>
+  </div>
+
+  <div style="min-height:100vh;">
+    <div class="topic-shell">
+      <div class="topic">
+        <details open>
+          <summary class="tit"><span>代數 Algebra</span></summary>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>
+            二次方程 Quadratic Equation
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>
+            複數 Complex Number
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>
+            函數及其圖像 Functions & Graph
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>
+            指數與對數函數 Exponential & Logarithmic Functions
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>
+            多項式 Polynomial
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>
+            變分 Variation
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>
+            等差與等比數列 Arithmetic & Geometric Sequence
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>
+            不等式與線性規劃 Inequalities & Linear Programming
+          </div>
+        </details>
+      </div>
+      <div class="topic">
+        <details open>
+          <summary class="tit"><span>幾何 Geometry</span></summary>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>圓 Circle
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>直線方程 Equations of Straight Line
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>圓方程 Equations of Circle
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>軌跡 Locus
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>三角比 Trigonometric Ratio
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>三角學的平面應用 Application of Trigonometry in 2D Problems
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>三角學的三維應用 Application of Trigonometry in 3D Problems
+          </div>
+        </details>
+      </div>
+      <div class="topic">
+        <details open>
+          <summary class="tit"><span>統計 Statistics</span></summary>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>排列與組合 Permutation & Combination
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>概率 Probability
+          </div>
+          <div class="block">
+            <i class="fa-regular fa-file-lines"></i>離差的度量 Measures of Dispersion
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>網站連結</h3>
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">DSE 數學</a></li>
+          <li><a href="#">DSE M2</a></li>
+          <li><a href="#">初中數學基礎鞏固班</a></li>
+          <li><a href="#">M2預備班</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>私補資訊</h3>
+        <ul>
+          <li><a href="#">課程資訊</a></li>
+          <li><a href="#">導師資訊</a></li>
+          <li><a href="#">定價</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>外部連結</h3>
+        <ul>
+          <li><a href="https://www.hkta.edu.hk/parent/booktutor?tutorId=154541">預約導師</a></li>
+          <li><a href="https://www.hkta.edu.hk/tutor/detail/154541">導師主頁</a></li>
+        </ul>
+      </div>
+  </footer>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.left = "0";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.left = "-280px";
+    }
+  </script>
+</body>
+
+</html>
