@@ -84,7 +84,7 @@
 }
 .menu-right span:hover {
   color: #000;
-  font-weight: bold;
+  qfont-weight: bold;
 }
 @media screen and (max-width: 768px) {
   .menu i {
@@ -141,15 +141,17 @@
   bottom: -5%;
   left: 0;
   right: 0;
-  height: 70%;
+  height: 80%;
   z-index: -10;
 
   background-size: cover;
   background-position: center;
   background-image: url("https://0oxx-study-room.github.io/media/img/website-ani-GIT.gif");
   transform: scale(1, -1);
-  filter:brightness(1.02);
-  -webkit-filter:brightness(1.02);
+  filter: brightness(1.02);
+  -webkit-filter: brightness(1.02);
+
+  mask-image: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 30%);
 }
 .top-text {
   color: #fff;
@@ -231,7 +233,8 @@
   border-radius: 15px;
   display: inline-block;
   text-align: left;
-  margin: 10px;
+  margin:10px 0 10px;
+  margin-right: 10px;
   padding: 15px;
   cursor: pointer;
   vertical-align: top;
@@ -365,20 +368,9 @@
 
 .tutor {
   position: relative;
-  padding: 20px;
+  padding: 40px 20px 40px;
   overflow: hidden;
   text-align: center;
-}
-.tutor-img {
-  position: absolute;
-  z-index: -10;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: -60px;
-
-  filter: hue-rotate(50deg);
-  -webkit-filter: hue-rotate(50deg);
 }
 .tutor font {
   font-size: 20px;
@@ -388,14 +380,8 @@
 }
 .tutor-shell {
   text-align: center;
-  qborder: 1px red solid;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   display: inline-block;
   padding: 20px 40px 20px;
-  border-radius: 15px;
 }
 .tutor-sub-shell {
   qborder: 1px red solid;
@@ -504,6 +490,48 @@
   padding: 0 0 5px;
 }
 
+.info-shell {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  margin-right: 15px;
+  padding: 15px 0 15px;
+  width: 300px;
+  vertical-align: top;
+  background-size: cover;
+  background-position: center;
+}
+.info-img {
+  cursor: pointer;
+  margin: 0 0 10px;
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+  border: 1px #ddd solid;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+}
+.info-shell span {
+  white-space: wrap;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin: 0 0 3px;
+}
+.info-shell p {
+  font-size: 14px;
+  white-space: wrap;
+  display: block;
+  margin: 0;
+}
+#info-music {
+  background-image: url("https://0oxx-study-room.github.io/media/img/info-music.png");
+}
+#cat-cat {
+  background-image: url("https://images.unsplash.com/photo-1519052537078-e6302a4968d4?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Mzg4MjQ5NTl8&ixlib=rb-4.0.3&q=85");
+}
+
 @media screen and (min-width: 768px) {
   .top {
     padding: 0 100px 0;
@@ -524,8 +552,8 @@
     text-align: center;
     overflow: auto;
     white-space: nowrap;
-    padding: 0 50px 0;
-    margin: 0 -50px 0;
+    padding: 0 100px 0;
+    margin: 0 -100px 0;
   }
 
   .top-text {
@@ -559,7 +587,7 @@
   .tutor {
     margin-top: 30px;
     min-height: 200px;
-    padding: 20vh 50px 20vh;
+    padding: calc(20vh - 50px) 50px 20vh;
   }
   .tutor-sub-shell {
     display: flex;
@@ -656,7 +684,6 @@ footer {
     margin: 0;
   }
 }
-
   </style>
 </head>
 
@@ -689,7 +716,7 @@ footer {
       </div>
 
       <span>歡迎來到0oXx自修室</span>
-      <font>一個自學平台，旨在幫助學生...</font>
+      <font>一個學習平台，旨在幫助學生...</font>
       <p>0oXx自修室旨在幫助學生能夠有針對性地進行訓練和鞏固。同時，題目也提供詳細的解答和講解，讓學生了解每道題的解題思路。</p>
       <button id="learnmore" onclick="location.href=''">了解更多</button>
       <button id="view" style="display:none;">前往課程</button>
@@ -774,11 +801,26 @@ footer {
       <p>0oXx全部教材均為內部研發，符合香港考試制度，設有中英文版本，各種難度，可以配合任何學生的學習，為學生提供高質素的教學服務。</p>
     </div>
   </div>
+  
+   <div class="course">
+    <span class="tit-text">最新資訊</span>
+    <div class="couse-shell">
+      <div class="info-shell" onclick="location.href='https://www.youtube.com/@0oXx-music'">
+        <div class="info-img" id="info-music"></div>
+        <span>0oXx自修室和0oXx音樂攜手合作</span>
+        <p>點擊收聽美妙的音樂放鬆身心</p>
+      </div>
+      <div class="info-shell">
+        <div class="info-img" id="cat-cat"></div>
+        <span>這是金黃色的小貓。</span>
+        <p>😼✨😼✨😼✨😼✨😼✨</p>
+      </div>
+    </div>
+  </div>
 
   <div class="tutor">
-    <div class="tutor-img">
-      <iframe src="https://www.desmos.com/calculator/grx0vgd7f7?embed" width="100%" height="100%" style="border:none" frameborder=0></iframe>
-    </div>
+      <div class="top-img" style="height:120%;">
+      </div>
     <div class="tutor-shell">
       <div class="tutor-sub-shell">
         <div class="t-info">
@@ -796,8 +838,6 @@ footer {
       </div>
     </div>
   </div>
-
-  <div style="height:50px;"></div>
 
   <footer>
     <div class="footer-container">
