@@ -1,0 +1,449 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="">
+  <script src="https://kit.fontawesome.com/92e8f6cdc3.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+  <link href="https://0oxx-study-room.github.io/media/img/website-logo_white-bg.png" rel="shortcut icon" />
+  <title>0oXx自修室 - 0oXx自修室？</title>
+
+  <style>
+  body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: "Noto Sans TC", sans-serif;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #fff;
+}
+
+.menu {
+  backdrop-filter:blur(5px);
+  -webkit-backdrop-filter:blur(5px);
+  position: fixed;
+  z-index: 888;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: row;
+}
+.menu i {
+  color: #fff;
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 8px;
+}
+#menu-i-l {
+  position: fixed;
+  left: 10px;
+}
+#menu-i-r {
+  position: fixed;
+  right: 3px;
+}
+.menu font {
+  color: #fff;
+  font-size: 16px;
+  margin: 0;
+}
+.menu-right {
+  position: absolute;
+  right: 10px;
+}
+.menu-right span {
+  color: #fff;
+  font-size: 14px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.menu-right span:hover {
+  color: #ddd;
+  qfont-weight: bold;
+}
+@media screen and (max-width: 768px) {
+  .menu {
+    justify-content: center;
+  }
+  .menu i {
+    display: inline-block;
+  }
+  .menu font {
+    margin: 0 20px 0;
+  }
+  .menu-right {
+    display: none;
+  }
+}
+
+.sidenav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: -280px;
+  width: 250px;
+  height: 100vh;
+  background-color: rgba(239, 239, 239, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s;
+}
+.closebtn {
+  psition: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  display: block;
+  font-size: 20px;
+  padding: 12px;
+  cursor: pointer;
+}
+.sidenav span {
+  color: #444;
+  display: block;
+  padding: 5px 0 5px;
+  margin: -5px 20px 15px;
+  cursor: pointer;
+}
+.sidenav span:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+
+
+
+.slide{
+  overflow-y:auto;
+  height:100vh;
+  margin:0 0 80vh;
+  padding:40px 20px 20px;
+  background-color: #000;
+  position: sticky;
+  top: 0;
+}
+.slide:last-child{
+  margin:0;
+}
+.slide .bg{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  height:100vh;
+  background-size: cover;
+  background-position: center;  
+  z-index:-100;
+}
+.slide span{
+  display:inline-block;
+  color:#fff;
+  font-size:40px;
+  margin:;
+}
+
+.logo-span {
+  display:inline-block;
+  color:#fff;
+  font-size:40px;
+  line-height:0.6;
+  margin:20px 0 0;
+}
+.logo-span font{
+  font-size:20px;
+}
+.logo-font{
+  text-align: right;
+  position:absolute;
+  right:20px;
+  top:60px;
+}
+.logo-font font{  
+  letter-spacing:10px;
+  display:block;
+  color:#fff;
+  font-size:20px;
+  line-height:1;
+  margin:-5px -10px 0;
+}
+.logo-font span{
+  display:block;
+  color:#fff;
+  font-size:12px;
+  margin:5px 0 0;
+}
+.logo-text-shell{
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:calc(10vh + 20px);
+  height:25vh;
+  display:flex;
+  mask-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.9) calc(100% - 20px),
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.logo-text-shell p{
+  margin:0;
+  margin-right:20px;
+  font-size:14px;
+  color:#fff;
+  overflow:auto;
+  width:60%;
+  height:100%;
+}
+.logo-text-shell p u{
+  cursor: pointer;
+}
+.logo-text-shell p:last-child{
+  margin-right:0;
+  width:40%;
+}
+#ooxx-logo .bg{
+  background-image: url("https://images.unsplash.com/photo-1541256942802-7b29531f0df8?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Mzg5OTY0MjN8&ixlib=rb-4.0.3&q=85");
+  opacity:1;
+}
+.logo{
+  position:absolute;
+  left:0;
+  right:0;
+  top:15vh;
+  filter:invert(1);
+  -webkit-filter:invert(1);
+  height:60vh;
+  background-size: contain;
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-image: url("https://0oxx-study-room.github.io/media/img/website-logo.png");
+}
+
+#ooxx-text-poster span{
+  font-size:100px;
+  font-weight:bold;
+  mix-blend-mode: difference;
+}
+.ooxx-text-poster-shell{
+  white-space:nowrap;
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  height:100vh;
+  overflow:hidden;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: center;
+}
+#ooxx-text-poster .bg{
+  background-image: url("https://images.unsplash.com/photo-1534138807944-7b5dd2954e1a?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzkwMDIyODl8&ixlib=rb-4.0.3&q=85");
+  opacity:1;
+}
+
+@media screen and (min-width: 768px) {
+  .slide{
+  padding:40px 100px 20px;
+}
+  
+  .logo-span {
+  margin:40px 0 0;
+}
+  .logo-font{
+  top:80px;
+  right:100px;
+}
+  .logo-text-shell{
+  left:100px;
+  right:100px;
+  bottom:calc(10vh + 40px);
+  height:15vh;
+    min-height:80px;
+}
+}
+
+footer {
+  filter:invert(0.95);
+  -webkit-filter:invert(0.95);
+  background-color: #eee;
+  color: #000;
+  padding: 20px 50px 20px;
+}
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+.footer-column {
+  flex: 1 1 200px; /* Adjust columns to fit smaller screens */
+  min-width: 150px; /* Minimum width for each column */
+}
+.footer-column h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #888;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-column ul li {
+  margin-bottom: 4px;
+}
+.footer-column ul li a {
+  text-decoration: none;
+  color: #111;
+  font-size: 13px;
+  transition: color 0.3s;
+}
+.footer-column ul li a:hover {
+  color: #999;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    display: inline;
+  }
+  .footer-column ul {
+    margin: 0 0 50px;
+  }
+  .footer-column {
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="menu">
+    <i id="menu-i-l" class="fa-solid fa-bars" onclick="openNav()"></i>
+    <i onclick="location.href='https://0oxx-study-room.github.io/'" id="menu-i-r" class="fa-solid fa-arrow-left"></i>
+    <font>0oXx自修室？</font>
+    <div class="menu-right">
+      <span>首頁</span>
+      <span>DSE 數學</span>
+      <span>DSE M2</span>
+      <span>初中數學基礎鞏固班</span>
+      <span>M2預備班</span>
+      <span>預約導師</span>
+    </div>
+  </div>
+  <div id="mySidenav" class="sidenav">
+    <font href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa-solid fa-xmark"></i></font>
+    <span>首頁</span>
+    <span>DSE 數學</span>
+    <span>DSE M2</span>
+    <span>初中數學基礎鞏固班</span>
+    <span>M2預備班</span>
+    <span>預約導師</span>
+  </div>
+
+  <div style="min-height:100vh;">
+    <div class="slide-shell">
+
+      <div class="slide" id="ooxx-logo">
+        <div class="bg"></div>
+        <span class="logo-span">0oXx<br>
+          <font>自修室</font>
+        </span>
+        <div class="logo-font">
+          <font>2024</font><span>/ 成立</span>
+        </div>
+        <div class="logo"></div>
+        <div class="logo-text-shell">
+          <p>0oXx自修室旨在幫助學生能夠有針對性地進行訓練和鞏固。同時，題目也提供詳細的解答和講解，讓學生了解每道題的解題思路。<br><br>
+          </p>
+          <p>0oXx自修室前身為創建者的中學ICT校本評核作業。<br><br>
+            <u onclick="location.href='https://ict-sba.github.io/'">https://ict-sba.github.io/</u><br><br></p>
+        </div>
+      </div>
+
+      <div class="slide" id="ooxx-text-poster">
+        <div class="bg"></div>
+        <div class="ooxx-text-poster-shell">
+        <span>0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
+          &emsp;0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
+          &emsp;&emsp;0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
+          &emsp;&emsp;&emsp;0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
+          &emsp;&emsp;&emsp;&emsp;0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
+        </span>
+        </div>
+      </div>
+      
+      <div class="slide" id="">
+        <span>0oxx</span>
+      </div>
+      
+      <div class="slide" id="">
+        <span>0oxx</span>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>網站連結</h3>
+        <ul>
+          <li><a href="#">首頁</a></li>
+          <li><a href="#">DSE 數學</a></li>
+          <li><a href="#">DSE M2</a></li>
+          <li><a href="#">初中數學基礎鞏固班</a></li>
+          <li><a href="#">M2預備班</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>私補資訊</h3>
+        <ul>
+          <li><a href="#">課程資訊</a></li>
+          <li><a href="#">導師資訊</a></li>
+          <li><a href="#">定價</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>外部連結</h3>
+        <ul>
+          <li><a href="https://www.hkta.edu.hk/parent/booktutor?tutorId=154541">預約導師</a></li>
+          <li><a href="https://www.hkta.edu.hk/tutor/detail/154541">導師主頁</a></li>
+        </ul>
+      </div>
+  </footer>
+
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.left = "0";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.left = "-280px";
+    }
+  </script>
+</body>
+
+</html>
