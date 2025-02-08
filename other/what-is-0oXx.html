@@ -25,8 +25,6 @@
 }
 
 .menu {
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   position: fixed;
   z-index: 888;
   top: 0;
@@ -229,30 +227,49 @@
   position: absolute;
   left: 20px;
   right: 20px;
-  bottom: calc(10vh + 20px);
+  bottom: calc(10vh + 30px);
   height: 25vh;
   display: flex;
-  mask-image: linear-gradient(
+  amask-image: linear-gradient(
     180deg,
     rgba(0, 0, 0, 0.9) calc(100% - 20px),
     rgba(0, 0, 0, 0) 100%
   );
 }
 .logo-text-shell p {
+  padding-left: 8px;
   margin: 0;
   margin-right: 20px;
   font-size: 14px;
   color: #fff;
   overflow: auto;
-  width: 60%;
   height: 100%;
+  border-left: 1px #fff solid;
 }
 .logo-text-shell p u {
   cursor: pointer;
 }
-.logo-text-shell p:last-child {
-  margin-right: 0;
+.logo-text-shell p:nth-child(1) {
+  width: 60%;
+}
+.logo-text-shell p:nth-child(2) {
   width: 40%;
+}
+.logo-text-shell p:last-child {
+  width:18px;
+  overflow: hidden;
+  padding-left: 0;
+  margin-right: 0;
+  border: none;
+  display: flex;
+  overflow-x: none;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+.logo-text-shell p:last-child span {
+  font-size: 18px;
+  display: block;
 }
 #ooxx-logo .bg {
   background-image: url("https://images.unsplash.com/photo-1541256942802-7b29531f0df8?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Mzg5OTY0MjN8&ixlib=rb-4.0.3&q=85");
@@ -418,10 +435,11 @@ footer {
         </div>
         <div class="logo"></div>
         <div class="logo-text-shell">
-          <p>0oXx自修室旨在幫助學生能夠有針對性地進行訓練和鞏固。同時，題目也提供詳細的解答和講解，讓學生了解每道題的解題思路。<br><br>
-          </p>
+          <p>0oXx自修室旨在幫助學生能夠有針對性地進行訓練和鞏固。同時，題目也提供詳細的解答和講解，讓學生了解每道題的解題思路。</p>
           <p>0oXx自修室前身為創建者的中學ICT校本評核作業。<br><br>
-            <u onclick="location.href='https://ict-sba.github.io/'">https://ict-sba.github.io/</u><br><br></p>
+            <u onclick="location.href='https://ict-sba.github.io/'">https://ict-sba.github.io/</u></p>
+          
+          <p><span>+</span><span>-</span><span>×</span><span>÷</span></p>
         </div>
       </div>
 
