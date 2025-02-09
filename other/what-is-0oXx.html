@@ -232,46 +232,32 @@
   left: 20px;
   right: 20px;
   bottom: calc(10vh + 30px);
-  height: 25vh;
-  display: flex;
-  amask-image: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.9) calc(100% - 20px),
-    rgba(0, 0, 0, 0) 100%
-  );
+  height: 27vh;
 }
+
 .logo-text-shell p {
-  padding-left: 8px;
   margin: 0;
-  margin-right: 20px;
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
   overflow: auto;
-  height: 100%;
-  border-left: 1px #fff solid;
 }
 .logo-text-shell p u {
   cursor: pointer;
 }
-.logo-text-shell p:nth-child(1) {
-  width: 60%;
-}
-.logo-text-shell p:nth-child(2) {
-  width: 40%;
-}
-.logo-text-shell p:last-child {
-  width: 18px;
+
+.ooxx-logo-p{
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:calc(10vh + 5px);
   overflow: hidden;
   padding-left: 0;
   margin-right: 0;
-  border: none;
   display: flex;
-  overflow-x: none;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
-  text-align: center;
 }
-.logo-text-shell p:last-child span {
+.ooxx-logo-p span{
   font-size: 18px;
   display: block;
 }
@@ -283,7 +269,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 15vh;
+  top: 14vh;
   filter: invert(1);
   -webkit-filter: invert(1);
   height: 60vh;
@@ -316,6 +302,10 @@
 #ooxx-text-poster .bg {
   background-image: url("https://images.unsplash.com/photo-1534138807944-7b5dd2954e1a?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzkwMDIyODl8&ixlib=rb-4.0.3&q=85");
   opacity: 1;
+}
+
+#ooxx-logo-text{
+  background-color: rgba(0,0,0,0);
 }
 
 #how-to span {
@@ -369,9 +359,15 @@
     left: 100px;
     right: 100px;
     bottom: calc(10vh + 40px);
-    height: 15vh;
+    height: 24vh;
     min-height: 80px;
   }
+  
+  .ooxx-logo-p{
+  left:100px;
+  right:100px;
+  bottom:calc(10vh + 5px);
+}
 
   #how-to font {
     right: 100px;
@@ -477,13 +473,22 @@ footer {
           <font>2024</font><span>/ 成立</span>
         </div>
         <div class="logo"></div>
+        <p class="ooxx-logo-p"><span>+</span><span>-</span><span>×</span><span>÷</span></p>
+      </div>
+
+      <div class="slide" id="ooxx-logo-text">
         <div class="logo-text-shell">
           <p>0oXx自修室旨在幫助學生能夠有針對性地進行訓練和鞏固。同時，題目也提供詳細的解答和講解，讓學生了解每道題的解題思路。</p>
-          <p>0oXx自修室前身為創建者的中學ICT校本評核作業。<br><br>
+        </div>
+      </div>
+
+      <div class="slide" id="ooxx-logo-text">
+        <div class="logo-text-shell">
+          <p style="color:rgba(0,0,0,0);">0oXx自修室旨在幫助學生能夠有針對性地進行訓練和鞏固。同時，題目也提供詳細的解答和講解，讓學生了解每道題的解題思路。</p>
+
+          <p><br>0oXx自修室前身為創建者的中學ICT校本評核作業。
             <u onclick="location.href='https://ict-sba.github.io/'">https://ict-sba.github.io/</u>
           </p>
-
-          <p><span>+</span><span>-</span><span>×</span><span>÷</span></p>
         </div>
       </div>
 
