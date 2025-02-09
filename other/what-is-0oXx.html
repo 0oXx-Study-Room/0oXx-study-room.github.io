@@ -190,93 +190,60 @@
   z-index: -100;
 }
 .slide span {
-  display: inline-block;
+  display: block;
   color: #fff;
-  font-size: 40px;
+  font-size: 20px;
   margin: ;
 }
 
-.logo-span {
-  display: inline-block;
+#ooxx-first{
+  background-color: blue;
+}
+.ooxx-first-text-shell {
   color: #fff;
-  font-size: 40px;
-  line-height: 1;
-  margin: 15px 0 0;
 }
-.logo-span font {
-  font-size: 20px;
-  margin: 0;
-}
-.logo-font {
-  text-align: right;
-  position: absolute;
-  right: 20px;
-  top: 60px;
-}
-.logo-font font {
-  letter-spacing: 10px;
-  display: block;
-  color: #fff;
-  font-size: 20px;
-  line-height: 1;
-  margin: -5px -10px 0;
-}
-.logo-font span {
-  display: block;
-  color: #fff;
-  font-size: 12px;
-  margin: 5px 0 0;
-}
-.logo-text-shell {
-  position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: calc(10vh + 30px);
-  height: 27vh;
-}
-
-.logo-text-shell p {
-  margin: 0;
-  font-size: 16px;
-  color: #fff;
-  overflow: auto;
-}
-.logo-text-shell p u {
-  cursor: pointer;
-}
-
-.ooxx-logo-p{
-  position:absolute;
-  left:20px;
-  right:20px;
-  bottom:calc(10vh + 5px);
-  overflow: hidden;
-  padding-left: 0;
-  margin-right: 0;
+.ooxx-first-text-out-shell {
+  position: relative;
+  border-bottom: 1px #fff solid;
+  width: 100%;
+  height: calc(25vh - 20px);
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: left;
+  align-items: flex-end;
 }
-.ooxx-logo-p span{
-  font-size: 18px;
-  display: block;
+.ooxx-first-text-shell div span {
+  vertical-align: sub;
+  font-size: 20vh;
 }
-#ooxx-logo .bg {
-  background-image: url("https://images.unsplash.com/photo-1541256942802-7b29531f0df8?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Mzg5OTY0MjN8&ixlib=rb-4.0.3&q=85");
-  opacity: 1;
+.ooxx-first-text-shell div font {
+  display: inline-block;
+  vertical-align: sub;
+  font-size: 18x;
+  hfont-weight: bold;
+  margin: 0 10px 20px;
 }
-.logo {
+.ooxx-first-text-shell div:nth-child(1) font {
   position: absolute;
-  left: 0;
+  bottom: 0;
   right: 0;
-  top: 14vh;
-  filter: invert(1);
-  -webkit-filter: invert(1);
-  height: 60vh;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url("https://0oxx-study-room.github.io/media/img/website-logo.png");
+  margin:0 0 20px;
+  font-size:18px;
+}
+.ooxx-first-text{
+  font-size:14px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display:block;
+  max-width:calc(100% - 140px);
+  width:50%;
+  height:calc(100% - 10px);
+  overflow:auto;
+}
+#ooxx-first .bg { 
+  mix-blend-mode: hard-light;
+  background-image: url("https://images.unsplash.com/photo-1579818276653-bc3240840cf6?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzkxMTEyNzl8&ixlib=rb-4.0.3&q=85");
+  opacity: 0.8;
 }
 
 #ooxx-text-poster span {
@@ -297,18 +264,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: center;
+  flex-direction: row;
 }
 #ooxx-text-poster .bg {
   background-image: url("https://images.unsplash.com/photo-1534138807944-7b5dd2954e1a?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzkwMDIyODl8&ixlib=rb-4.0.3&q=85");
   opacity: 1;
 }
 
-#ooxx-logo-text{
-  background-color: rgba(0,0,0,0);
+#ooxx-logo-text {
+  background-color: rgba(0, 0, 0, 0);
 }
 
 #how-to span {
+  font-size:40px;
   padding: 10px;
 }
 #how-to font {
@@ -339,6 +307,42 @@
   -webkit-filter: grayscale(1);
 }
 
+#how-to-2{
+  background-color:rgba(0,0,0,0.4);  
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+#how-to-2 span a{
+  color:blue;
+}
+.how-to-2-smile{
+  position: absolute;
+  left:20px;
+  right:20px;
+  bottom:calc(10vh + 30px);
+  width:20vw;
+  height:20vw;
+  min-width:180px;
+  min-height:180px;
+  z-index:-10;
+  background-size: 122%;   
+  background-position: center bottom; 
+  background-repeat: no-repeat;
+  background-image: url("https://0oxx-study-room.github.io/media/img/website-logo.png");
+  filter: invert(0.95);
+  -webkit-filter: invert(0.95);
+  
+}
+#cg-2 {
+  opacity:0.3;
+  position: absolute;
+  z-index: -100;
+  width: calc(100vw - 60px);
+  height: calc(100vh - 40px);
+  bottom: calc(10vh + 20px);
+  left: 20px;
+}
+
 @media screen and (min-width: 768px) {
   .down-arrow {
     display: none;
@@ -347,26 +351,9 @@
   .slide {
     padding: 40px 100px 20px;
   }
-
-  .logo-span {
-    margin: 40px 0 0;
-  }
-  .logo-font {
-    top: 80px;
-    right: 100px;
-  }
-  .logo-text-shell {
-    left: 100px;
-    right: 100px;
-    bottom: calc(10vh + 40px);
-    height: 24vh;
-    min-height: 80px;
-  }
   
-  .ooxx-logo-p{
-  left:100px;
-  right:100px;
-  bottom:calc(10vh + 5px);
+  .ooxx-first-text{
+  font-size:16px;
 }
 
   #how-to font {
@@ -376,6 +363,13 @@
     width: calc(100vw - 220px);
     left: 100px;
   }
+  
+  .how-to-2-smile{
+  left:100px;
+  right:100px;
+  }
+  
+}
 }
 
 footer {
@@ -464,31 +458,27 @@ footer {
   <div style="min-height:100vh;">
     <div class="slide-shell">
 
-      <div class="slide" id="ooxx-logo">
+      <div class="slide" id="ooxx-first">
         <div class="bg"></div>
-        <span class="logo-span">0oXx<br>
-          <font>自修室</font>
-        </span>
-        <div class="logo-font">
-          <font>2024</font><span>/ 成立</span>
-        </div>
-        <div class="logo"></div>
-        <p class="ooxx-logo-p"><span>+</span><span>-</span><span>×</span><span>÷</span></p>
-      </div>
-
-      <div class="slide" id="ooxx-logo-text">
-        <div class="logo-text-shell">
-          <p>0oXx自修室旨在幫助學生能夠有針對性地進行訓練和鞏固。同時，題目也提供詳細的解答和講解，讓學生了解每道題的解題思路。</p>
-        </div>
-      </div>
-
-      <div class="slide" id="ooxx-logo-text">
-        <div class="logo-text-shell">
-          <p style="color:rgba(0,0,0,0);">0oXx自修室旨在幫助學生能夠有針對性地進行訓練和鞏固。同時，題目也提供詳細的解答和講解，讓學生了解每道題的解題思路。</p>
-
-          <p><br>0oXx自修室前身為創建者的中學ICT校本評核作業。
-            <u onclick="location.href='https://ict-sba.github.io/'">https://ict-sba.github.io/</u>
-          </p>
+        <div class="ooxx-first-text-shell">
+          <div class="ooxx-first-text-out-shell">
+            <span>0</span>
+            <font>2024 /成立</font>
+          </div>
+          <div class="ooxx-first-text-out-shell">
+            <span>o</span>
+          </div>
+          <div class="ooxx-first-text-out-shell">
+            <span>X</span>
+            <div class="ooxx-first-text">0oXx自修室旨在幫助學生能夠有針對性地進行訓練和鞏固。同時，題目也提供詳細的解答和講解，讓學生了解每道題的解題思路。</div>
+          </div>
+          <div class="ooxx-first-text-out-shell">
+            <span>x</span>
+            <font>自修室</font>
+            <div class="ooxx-first-text">0oXx自修室前身為創建者的中學ICT校本評核作業。<br>
+              <u onclick="location.href='https://ict-sba.github.io/'">https://ict-sba.github.io/</u>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -511,9 +501,13 @@ footer {
         <div class="circle-grid" id="cg-1"></div>
       </div>
 
-      <div class="slide" id="">
+      <div class="slide" id="how-to-2">
         <div class="bg"></div>
-        <span>0oxx</span>
+        <span><br>同學可以跟據自己的需求及偏好，選擇自主學習或<a href="">尋求私補</a>。<br><br></span>
+        <span>網站裏有免費的 <a href="https://0oxx-study-room.github.io/couses/dse-math.html">DSE 數學</a> 及 <a href="">DSE M2</a> 學習材料。</span>
+        <div class="circle-grid" id="cg-2"></div>
+
+        <div class="how-to-2-smile"></div>
       </div>
 
       <div class="slide" id="">
