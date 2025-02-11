@@ -31,7 +31,6 @@
   left: 0;
   right: 0;
   padding: 10px;
-  display: block;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -73,7 +72,6 @@
 }
 .menu-right span:hover {
   color: #ddd;
-  qfont-weight: bold;
 }
 @media screen and (max-width: 768px) {
   .menu {
@@ -104,7 +102,7 @@
   transition: all 0.4s;
 }
 .closebtn {
-  psition: fixed;
+  position: fixed;
   top: 0;
   left: 0;
   margin: 0;
@@ -167,7 +165,7 @@
 }
 
 .slide {
-  overflow-y: auto;
+  overflow: hidden;
   height: 100vh;
   margin: 0 0 50vh;
   padding: 40px 20px 20px;
@@ -176,7 +174,7 @@
   top: 0;
 }
 .slide:last-child {
-  margin: 0;
+  margin: 0 0 -30px;
 }
 .slide .bg {
   position: absolute;
@@ -196,7 +194,7 @@
   margin: ;
 }
 
-#ooxx-first{
+#ooxx-first {
   background-color: blue;
 }
 .ooxx-first-text-shell {
@@ -218,29 +216,28 @@
 .ooxx-first-text-shell div font {
   display: inline-block;
   vertical-align: sub;
-  font-size: 18x;
-  hfont-weight: bold;
+  font-size: 18px;
   margin: 0 10px 20px;
 }
 .ooxx-first-text-shell div:nth-child(1) font {
   position: absolute;
   bottom: 0;
   right: 0;
-  margin:0 0 20px;
-  font-size:18px;
+  margin: 0 0 20px;
+  font-size: 18px;
 }
-.ooxx-first-text{
-  font-size:14px;
+.ooxx-first-text {
+  font-size: 14px;
   position: absolute;
   bottom: 0;
   right: 0;
-  display:block;
-  max-width:calc(100% - 140px);
-  width:50%;
-  height:calc(100% - 10px);
-  overflow:auto;
+  display: block;
+  max-width: calc(100% - 140px);
+  width: 50%;
+  height: calc(100% - 10px);
+  overflow: auto;
 }
-#ooxx-first .bg { 
+#ooxx-first .bg {
   mix-blend-mode: hard-light;
   background-image: url("https://images.unsplash.com/photo-1579818276653-bc3240840cf6?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzkxMTEyNzl8&ixlib=rb-4.0.3&q=85");
   opacity: 0.8;
@@ -276,7 +273,7 @@
 }
 
 #how-to span {
-  font-size:40px;
+  font-size: 40px;
   padding: 10px;
 }
 #how-to font {
@@ -307,38 +304,20 @@
   -webkit-filter: grayscale(1);
 }
 
-#how-to-2{
-  background-color:rgba(0,0,0,0.4);  
+#how-to-2 {
+  background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
-#how-to-2 span a{
-  color:blue;
-}
-.how-to-2-smile{
-  position: absolute;
-  left:20px;
-  right:20px;
-  bottom:calc(10vh + 30px);
-  width:20vw;
-  height:20vw;
-  min-width:180px;
-  min-height:180px;
-  z-index:-10;
-  background-size: 122%;   
-  background-position: center bottom; 
-  background-repeat: no-repeat;
-  background-image: url("https://0oxx-study-room.github.io/media/img/website-logo.png");
-  filter: invert(0.95);
-  -webkit-filter: invert(0.95);
-  
+#how-to-2 span a {
+  color: #6893ff;
 }
 #cg-2 {
-  opacity:0.3;
+  opacity: 0.3;
   position: absolute;
   z-index: -100;
-  width: calc(100vw - 60px);
-  height: calc(100vh - 40px);
+  width: calc(100vw - 50px);
+  height: 60vh;
   bottom: calc(10vh + 20px);
   left: 20px;
 }
@@ -351,10 +330,10 @@
   .slide {
     padding: 40px 100px 20px;
   }
-  
-  .ooxx-first-text{
-  font-size:16px;
-}
+
+  .ooxx-first-text {
+    font-size: 16px;
+  }
 
   #how-to font {
     right: 100px;
@@ -363,12 +342,11 @@
     width: calc(100vw - 220px);
     left: 100px;
   }
-  
-  .how-to-2-smile{
-  left:100px;
-  right:100px;
+
+  .how-to-2-smile {
+    left: 100px;
+    right: 100px;
   }
-  
 }
 
 footer {
@@ -481,18 +459,6 @@ footer {
         </div>
       </div>
 
-      <div class="slide" id="ooxx-text-poster">
-        <div class="bg"></div>
-        <div class="ooxx-text-poster-shell">
-          <span>0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
-            &emsp;0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
-            &emsp;&emsp;0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
-            &emsp;&emsp;&emsp;0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
-            &emsp;&emsp;&emsp;&emsp;0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
-          </span>
-        </div>
-      </div>
-
       <div class="slide" id="how-to">
         <div class="bg"></div>
         <span>如何使用0oXx自修室？</span>
@@ -505,22 +471,21 @@ footer {
         <span><br>同學可以跟據自己的需求及偏好，選擇自主學習或<a href="">尋求私補</a>。<br><br></span>
         <span>網站裏有免費的 <a href="https://0oxx-study-room.github.io/couses/dse-math.html">DSE 數學</a> 及 <a href="">DSE M2</a> 學習材料。</span>
         <div class="circle-grid" id="cg-2"></div>
-
-        <div class="how-to-2-smile"></div>
       </div>
 
-      <div class="slide" id="">
+      <div class="slide" id="ooxx-text-poster">
         <div class="bg"></div>
-        <span>0oxx</span>
-      </div>
-
-      <div class="slide" id="">
-        <div class="bg"></div>
-        <span>0oxx</span>
+        <div class="ooxx-text-poster-shell">
+          <span>0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
+            &emsp;0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
+            &emsp;&emsp;0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
+            &emsp;&emsp;&emsp;0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
+            &emsp;&emsp;&emsp;&emsp;0oXx 0oXx 0oXx 0oXx 0oXx 0oXx 0oXx<br>
+          </span>
+        </div>
       </div>
 
     </div>
-  </div>
   </div>
 
   <footer>
@@ -552,6 +517,7 @@ footer {
           <li><a href="https://www.hkta.edu.hk/tutor/detail/154541">導師主頁</a></li>
         </ul>
       </div>
+    </div>
   </footer>
 
   <script>
